@@ -9,6 +9,7 @@ use App\Model\Register;
 class RegisterController extends Controller
 {
     public function store(Request $req,Register $register){
+         
         $inputs = $req->all();
        
 

@@ -18,14 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('register');
-
-
 });
+Route::get('/login1', function () {
+    return view('login');
+});
+
 Route::get('/register/show','RegisterController@show')->name('register.show');
 Route::post('/register/save','RegisterController@store')->name('register.store');
 Route::post('/login/postLogin','LoginController@postLogin')->name('login.postLogin');
 Route::get('/register/edit{id}','RegisterController@edit')->name('register.edit');
 Route::get('/home', 'HomeController@index');
+Route::resource('register', 'CrudController@destroy');
+
 
 Auth::routes('/register/show');
 

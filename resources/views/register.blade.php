@@ -51,44 +51,44 @@ h1 {
     {{ csrf_field() }}
     <div class="input-group">
             <label for="Firstname">ชื่อ</label>
-            <input type="text" name="First_name">
+            <input type="text" name="First_name" required> 
         </div>
         <div class="input-group">
             <label for="Lastname">นามสกุล</label>
-            <input type="text" name="Last_name">
+            <input type="text" name="Last_name" required>
         </div>
         <div class="input-group">
             <label for="Tel">เบอร์โทร</label>
-            <input type="text" name="Tel">
+            <input type="text" name="Tel" required>
         </div>
         <div class="input-group">
             <label for="Email">อีเมล์</label>
-            <input type="email" name="Email">
+            <input type="email" name="Email" required>
         </div>
         <div class="input-group">
             <label for="Addess">ที่อยู่</label>
-            <input type="text" name="Addess">
+            <input type="text" name="Addess" required>
         </div>
         <div class="input-group">
             <label for="District">อำเภอ</label>
-            <input type="text" name="District">
+            <input type="text" name="District" required>
         </div>
         <div class="input-group">
             <label for="Province">จังหวัด</label>
-            <input type="text" name="Province">
+            <input type="text" name="Province" required>
         </div>
         <div class="input-group">
             <label for="Zipcode">รหัสไปรษณีย์</label>
-            <input type="text" name="Zip_code">
+            <input type="text" name="Zip_code" required>
         </div>
         <div class="input-group">
             <label for="Password">รหัสผ่าน</label>
-            <input type="password" name="Password">
+            <input type="password" name="Password" required>
         </div>
          <div class="input-group">
             <button type="submit" name="reg_user" class="btn">Register</button>
         </div>
-        <a href="login">เป็นสมาชิกอยู่แล้ว</a>
+        <a href="/login1">เป็นสมาชิกอยู่แล้ว</a>
     </form>
 </body>
 </html>

@@ -6,6 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ล็อกอิน</title>
 </head>
+<style>
+    h1 {
+  text-shadow: 2px 2px 5px red;
+  text-align: center;
+}
+    form {
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #b0c4de;
+    background: #99ff99;
+    border-radius: 0px 0px 10px 10px;
+}
+    input-group {
+    margin: 10px 0px 10px 0px;
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+}
+
+
+
+</style>
 
 <body>
 <h1>เข้าสู่ระบบ</h1>
@@ -19,11 +45,9 @@
             <label for="password">รหัสผ่าน</label>
             <input type="password" name="password">
         </div>
-        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    เข้าสู่ระบบ
-                                </button>
-                            </div>
+        <div class="form-group"> <br>
+         <div class="col-md-6 col-md-offset-4">
+                 <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+         </div>
 </body>
 </html>
