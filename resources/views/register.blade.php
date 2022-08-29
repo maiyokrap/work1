@@ -25,17 +25,19 @@ form {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #b0c4de;
-    background: white;
-    border-radius: 0px 0px 10px 10px;
-}
-h1{
+    background: #99ff99;
+    border-radius: 10px 10px 10px 10px;
     text-align: center;
+}
+h1 {
+  text-shadow: 2px 2px 5px red;
+  text-align: center;
 }
 
 
 .input-group label {
     display: block;
-    text-align: left;
+    text-align: center;
     margin: 3px;
 }
     </style>
@@ -86,7 +88,7 @@ h1{
          <div class="input-group">
             <button type="submit" name="reg_user" class="btn">Register</button>
         </div>
-        <a href="/">เป็นสมาชิกอยู่แล้ว</a>
+        <a href="login">เป็นสมาชิกอยู่แล้ว</a>
     </form>
 </body>
 </html>

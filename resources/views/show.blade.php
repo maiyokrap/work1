@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
 <style>
-table, th, td {
-  border:1px solid black;
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
 }
 
 
@@ -15,7 +28,7 @@ form {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #b0c4de;
-    background: white;
+    background: #f2f2f2;
     border-radius: 0px 0px 10px 10px;
 }
 input-group {
@@ -51,11 +64,11 @@ a{
     </div>
     <div class="input-group">
         <label for="tel">เบอร์โทร</label>
-        <input type="email" name="tel">
+        <input type="text" name="tel">
     </div>
     <div class="input-group">
         <label for="email">อีเมล์</label>
-        <input type="text" name="email">
+        <input type="email" name="email">
     </div>
     <div class="input-group">
         <button type="submit" name="reg_user" class="btn">ค้นหา</button>
@@ -68,6 +81,7 @@ a{
     <th>เบอร์โทร</th>
     <th>อีเมล์</th>
     <th>ที่อยู่</th>
+    <th>ลบ</th>
   </tr>
 
   @foreach($data as $value)
@@ -78,7 +92,7 @@ a{
     <td>{{$value->Tel}}</td>
     <td>{{$value->Email}}</td>
     <td>{{$value->Addess}}</td>
-  
+    
   </tr>
     @endforeach  
 </table>
