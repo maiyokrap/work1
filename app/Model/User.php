@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Model;
+use Illuminate\Database\Eloquent\Model;
+
+
+Class User extends Model
+{
+    protected $table = 'member';
+    protected $primaryKey = 'Id_member';
+    public $timestamps = false;
+
+    protected $fillable = [
+        'First_name',
+        'Last_name',
+        'Tel',
+        'Email',
+        'Addess',
+        'District',
+        'Province',
+        'Zip_code',
+        'Password'
+
+    ];
+
+    
+}
