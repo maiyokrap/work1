@@ -1,0 +1,4 @@
+<form1 action="{{route('register.destroy',$row->id)}}" method="post">
+        @csrf @method('DELETE')
+        <input type="submit" value='ลบ' class="btn btn-danger">
+      </form1>

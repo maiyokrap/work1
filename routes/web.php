@@ -27,8 +27,10 @@ Route::get('/register/show','RegisterController@show')->name('register.show');
 Route::post('/register/save','RegisterController@store')->name('register.store');
 Route::post('/login/postLogin','LoginController@postLogin')->name('login.postLogin');
 Route::get('/register/edit{id}','RegisterController@edit')->name('register.edit');
+Route::post('register/show','CrudController@destroy')->name('register.destroy');
+Route::post('/create','CrudController@store')->name('crud.store');
 Route::get('/home', 'HomeController@index');
-Route::resource('register', 'CrudController@destroy');
+
 
 
 Auth::routes('/register/show');

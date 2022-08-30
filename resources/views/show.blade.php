@@ -92,8 +92,8 @@ a{
     <th>เบอร์โทร</th>
     <th>อีเมล์</th>
     <th>ที่อยู่</th>
-    <th>จัดการ</th>
-    
+    <th>แก้ไข</th>
+    <th>ลบ</th>
 
   </tr>
 
@@ -105,23 +105,18 @@ a{
     <td>{{$value->Tel}}</td>
     <td>{{$value->Email}}</td>
     <td>{{$value->Addess}}</td>
-    <!-- we will also add show, edit, and delete buttons -->
     <td>
-			
-      <!-- delete the nerd (uses the destroy method DESTROY /blogs/{id} -->
-      <!-- we will add this later since its a little more complicated than the other two buttons -->
-      <form1 class="form-horizontal" method="POST" action="{{ URL('crud/'.$value->id) }}">
-      {{ csrf_field() }}
-      {{ method_field('DELETE') }}
-      
-      <!-- edit this nerd (uses the edit method found at GET /users/{id}/edit -->
-      <a class="btn btn-xs btn-info" href="{{ URL::to('register/' . $value->id . '/edit') }}">Edit</a>
-      
-      <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-      </form1>
-
-
+    <a href=""class="btn btn-primary">แก้ไข</a>
     </td>
+    <td>
+     
+      
+    </td>
+    
+     
+
+
+  
     
 
     
