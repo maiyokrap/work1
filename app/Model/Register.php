@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 Class Register extends Model
 {
     protected $table = 'member';
-    protected $primaryKey = 'Id_member';
+    protected $primaryKey = 'Id';
     public $timestamps = false;
 
     protected $fillable = [

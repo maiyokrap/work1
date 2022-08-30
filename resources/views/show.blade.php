@@ -40,7 +40,7 @@ input-group {
     text-align: left;
     margin: 3px;
 }
-a{
+.a{
     text-align: center;
 
 }
@@ -49,7 +49,9 @@ a{
 
 </style>
 <body>
-<a href="/">เพิ่มสมาชิก</a>
+<a href="/">สมัคร</a> <br>
+<a href="/login1">เข้าสู่ระบบ</a>
+
 <h2>แสดงรายชื่อพนักงาน</h2>
  
 <form action="" method="get">
@@ -98,6 +100,8 @@ a{
   </tr>
 
   @foreach($data as $value)
+ 
+ 
   
   <tr>
     <td>{{$value->First_name}}</td>
@@ -106,11 +110,11 @@ a{
     <td>{{$value->Email}}</td>
     <td>{{$value->Addess}}</td>
     <td>
-    <a href=""class="btn btn-primary">แก้ไข</a>
+    <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary" >แก้ไข</a>
     </td>
     <td>
-     
-      
+      <a href="{{route('crud.destroy',$value->Id)}}"class="btn btn-primary">ลบ</a>
+    </td>
     </td>
     
      

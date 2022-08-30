@@ -20,6 +20,7 @@ class RegisterController extends Controller
     }
     public function show( Register $register){
         $inputs = request()->input();
+
        
 
        
@@ -40,6 +41,7 @@ class RegisterController extends Controller
       
         
         $this->data['data'] = $register->get();
+        
         
        
         return view('show',$this->data);
