@@ -2,3 +2,11 @@
         @csrf @method('DELETE')
         <input type="submit" value='ลบ' class="btn btn-danger">
       </form1>
+
+
+      td>
+      <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary" >แก้ไข</a>
+    </td>
+    <td>
+      <a href="{{route('register.destroy',$value->Id)}}"class="btn btn-primary">ลบ</a>
+    </td>
