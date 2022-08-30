@@ -47,29 +47,31 @@ h1 {
 
 <body>
 <h1>แก้ไขข้อมูล</h1>
-    <form action="{{route('register.store')}}" method = "post">
+    <form action="{{route('crud.update')}}" method = "post">
     {{ csrf_field() }}
+    <input value="{{$id->Id}}" type="hidden" name="Id" >
     <div class="input-group">
             <label for="Firstname">ชื่อ</label>
-            <input type="text" name="First_name" required> 
+            <input value="{{$id->First_name}}" type="text" name="First_name" required> 
         </div>
         <div class="input-group">
             <label for="Lastname">นามสกุล</label>
-            <input type="text" name="Last_name" required>
+            <input value="{{$id->Last_name}}"type="text" name="Last_name" required>
         </div>
         <div class="input-group">
             <label for="Tel">เบอร์โทร</label>
-            <input type="text" name="Tel" required>
+            <input value="{{$id->Tel}}" type="text" name="Tel" required>
         </div>
         <div class="input-group">
             <label for="Email">อีเมล์</label>
-            <input type="email" name="Email" required>
+            <input value="{{$id->Email}}"type="email" name="Email" required>
         </div>
         <div class="input-group">
             <label for="Addess">ที่อยู่</label>
-            <input type="text" name="Addess" required>
+            <input value="{{$id->Addess}}"type="text" name="Addess" required>
 
         </div>
         <div class="input-group">
             <button type="submit" name="edit" class="btn">ยืนยัน</button>
         </div>
+    </form>

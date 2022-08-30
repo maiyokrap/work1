@@ -12,17 +12,27 @@ use Symfony\Component\VarDumper\Cloner\Data;
 class CrudController extends Controller
 {
 
-    public function create(){
-        return view('register.show');
+    public function update(Request $req,Register $register){
+
+        $inputs = $req->only('First_name');
+        $id = $req->Id;
+
+        $data = $register->find($id);
+        $data->update($inputs);
+
+        return redirect('/register/show');
+
+        
 
     }
 
     public function edit($id){
         $id = Register::find($id);
+        
 
 
 
-        return view('register.show',compact('id'));
+        return view('formEdit',compact('id'));
 
       
 
@@ -32,6 +42,7 @@ class CrudController extends Controller
     
     
     public function destroy($id){
+        
         
         Register::find($id)->delete();
         return redirect()->route('register.show')->with('success','Post delete success');

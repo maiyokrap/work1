@@ -29,6 +29,7 @@ Route::post('/login/postLogin','LoginController@postLogin')->name('login.postLog
 Route::get('/formEdit/edit/{id}','CrudController@edit')->name('register.edit');
 Route::get('/delete/{id}','CrudController@destroy')->name('crud.destroy');
 Route::post('/create','CrudController@store')->name('crud.store');
+Route::post('/update/save','CrudController@update')->name('crud.update');
 
 Route::get('/home', 'HomeController@index');
 
