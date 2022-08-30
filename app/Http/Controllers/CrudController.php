@@ -18,7 +18,11 @@ class CrudController extends Controller
     }
 
     public function edit($id){
-        return view('/formEdit' );
+        $id = Register::find($id);
+
+
+
+        return view('register.show',compact('id'));
 
       
 
@@ -28,16 +32,10 @@ class CrudController extends Controller
     
     
     public function destroy($id){
-        dd($id);
+        
+        Register::find($id)->delete();
+        return redirect()->route('register.show')->with('success','Post delete success');
 
     }
     
-    // {$id->delete();
-        
-    //     return redirect()->route('register.show')
-    //                     ->with( 'Successfully deleted the blog!');
-        
-
-       
-    }
 }

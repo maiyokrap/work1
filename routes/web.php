@@ -26,8 +26,8 @@ Route::get('/login1', function () {
 Route::get('/register/show','RegisterController@show')->name('register.show');
 Route::post('/register/save','RegisterController@store')->name('register.store');
 Route::post('/login/postLogin','LoginController@postLogin')->name('login.postLogin');
-Route::get('/formEdit/edit{id}','CrudController@edit')->name('register.edit');
-Route::post('register/show','CrudController@destroy')->name('crud.destroy');
+Route::get('/formEdit/edit/{id}','CrudController@edit')->name('register.edit');
+Route::get('/delete/{id}','CrudController@destroy')->name('crud.destroy');
 Route::post('/create','CrudController@store')->name('crud.store');
 
 Route::get('/home', 'HomeController@index');
