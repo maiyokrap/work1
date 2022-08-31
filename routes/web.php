@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/login1', function () {
     return view('login');
 });
-
+Route::get('/', 'RegisterController@index')->name('register.index');
 Route::get('/register/show','RegisterController@show')->name('register.show');
 Route::post('/register/save','RegisterController@store')->name('register.store');
 Route::post('/login/postLogin','LoginController@postLogin')->name('login.postLogin');
@@ -30,7 +30,8 @@ Route::get('/formEdit/edit/{id}','CrudController@edit')->name('register.edit');
 Route::get('/delete/{id}','CrudController@destroy')->name('crud.destroy');
 Route::post('/create','CrudController@store')->name('crud.store');
 Route::post('/update/save','CrudController@update')->name('crud.update');
-
+Route::post('/province');
+Route::post('/province/fetch','RegisterController@fetch')->name('province.fetch');
 Route::get('/home', 'HomeController@index');
 
 

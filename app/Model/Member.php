@@ -4,7 +4,7 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 
 
-Class Register extends Model
+Class Member extends Model
 {
     protected $table = 'member';
     protected $primaryKey = 'Id';
@@ -16,8 +16,7 @@ Class Register extends Model
         'Tel',
         'Email',
         'Addess',
-        'District',
-        'Province',
+        'id_province',
         'Zip_code',
         'Password'
 

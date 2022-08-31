@@ -38,7 +38,10 @@ h1 {
 .input-group label {
     display: block;
     text-align: center;
-    margin: 3px;
+    margin: 8px;
+}
+.form-control{
+    width: 30%;
 }
     </style>
     
@@ -70,16 +73,25 @@ h1 {
             <input type="text" name="Addess" required>
         </div>
         <div class="input-group">
-            <label for="District">อำเภอ</label>
-            <input type="text" name="District" required>
-        </div>
+                        <label for="id_province">จังหวัด</label>
+                        <select name="id_province" class="form-control province">
+                            <option value="">จังหวัด</option>
+                            @foreach($list as $row)
+                                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    
         <div class="input-group">
-            <label for="Province">จังหวัด</label>
-            <input type="text" name="Province" required>
-        </div>
+                        <label for="id_amphures">อำเภอ</label>
+                        <select name="id_amphures" class="form-control amphures">
+                            <option value="">อำเภอ</option>
+                            </select>
+                    </div>
+               
         <div class="input-group">
-            <label for="Zipcode">รหัสไปรษณีย์</label>
-            <input type="text" name="Zip_code" required>
+            <label for="code">รหัสไปรษณีย์</label>
+            <input type="text" name="code" required>
         </div>
         <div class="input-group">
             <label for="Password">รหัสผ่าน</label>
@@ -90,5 +102,28 @@ h1 {
         </div>
         <a href="/login1">เป็นสมาชิกอยู่แล้ว</a>
     </form>
+    {{csrf_field()}}
+
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $('.province').change(function(){
+        if($(this).val()!='');
+        var select=$(this).val();
+        var _token=$('input[name="_token"]').val();
+        $.ajax({
+            url:"{{route('province.fetch')}}",
+            method:"POST",
+            data:{select:select,_token:_token},
+            success:function(result){
+                $('.amphures').html(result);
+               
+            }
+            
+        })
+        }
+       
+    );
+
+</script>
 </html>

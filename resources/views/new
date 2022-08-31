@@ -10,3 +10,20 @@
     <td>
       <a href="{{route('register.destroy',$value->Id)}}"class="btn btn-primary">ลบ</a>
     </td>
+
+
+
+    var _token=$('input[name="_token"]').val();
+        $.ajax({
+            url:"{{route('province.fetch')}}",
+            method:"POST",
+            data:{select:select,_token:_token},
+            success:function(result){
+                $('.amphures').html(result);
+               
+            }
+            
+        })
+        }
+
+        if($(this).val()!='');

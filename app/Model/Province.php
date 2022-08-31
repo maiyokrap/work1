@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 Class Province extends Model
 {
-    protected $table = 'province';
-    protected $primaryKey = 'Provinc_Id';
+    protected $table = 'provinces';
+    protected $primaryKey = 'id_province';
     public $timestamps = false;
 
     protected $fillable = [
-        'Province_name',
-        'District',
-        
+        'code',
+        'name_th',
+        'name_en',
+        'geography_id'
 
     ];
 

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Model\Register;
+use App\Model\Member;
 
 
 
 class LoginController extends Controller
 {
-    public function postLogin(Request $request,Register $register){
+    public function postLogin(Request $request,Member $member){
         
         $username = $request->First_name;
         $password = $request->password;
 
-        $dataRegister = $register->where('First_name', $username)->first();
+        $dataRegister = $member->where('First_name', $username)->first();
 
     
         

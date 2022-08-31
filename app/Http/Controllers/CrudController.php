@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Model\Register;
+use App\Model\Member;
 
 
 
@@ -12,39 +12,28 @@ use Symfony\Component\VarDumper\Cloner\Data;
 class CrudController extends Controller
 {
 
-    public function update(Request $req,Register $register){
+    public function update(Request $req,Member $member){
 
         $inputs = $req->only('First_name','Last_name','Tel','Email','Addess');
         $id = $req->Id;
 
-        $data = $register->find($id);
+        $data = $member->find($id);
         $data->update($inputs);
 
         return redirect('/register/show');
 
-        
-
-    }
+           }
 
     public function edit($id){
-        $id = Register::find($id);
-        
-
-
-
-        return view('formEdit',compact('id'));
-
-      
-
-
-
-    }
+        $id = Member::find($id);
+         return view('formEdit',compact('id'));
+          }
     
     
     public function destroy($id){
         
         
-        Register::find($id)->delete();
+        Member::find($id)->delete();
         return redirect()->route('register.show')->with('success','Post delete success');
 
     }

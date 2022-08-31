@@ -50,7 +50,8 @@ input-group {
 </style>
 <body>
 <a href="/">สมัคร</a> <br>
-<a href="/login1">เข้าสู่ระบบ</a>
+<a href="/login1">เข้าสู่ระบบ</a> <br>
+<a href="/province">เพิ่มจังหวัด</a>
 
 <h2>แสดงรายชื่อพนักงาน</h2>
  
