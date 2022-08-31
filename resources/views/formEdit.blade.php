@@ -71,6 +71,22 @@ h1 {
             <input value="{{$id->Addess}}"type="text" name="Addess" required>
 
         </div>
+       
+        <div class="input-group">
+            <label for="Addess">ที่อยู่</label>
+            <input value="{{$id->Addess}}"type="text" name="Addess" required>
+
+        </div>
+        <div class="input-group">
+            <label for="Addess">ที่อยู่</label>
+            <input value="{{$id->Addess}}"type="text" name="Addess" required>
+
+        </div>
+        <div class="input-group">
+            <label for="Addess">ที่อยู่</label>
+            <input value="{{$id->Addess}}"type="text" name="Addess" required>
+
+        </div>
         <div class="input-group">
             <button type="submit" name="edit" class="btn">ยืนยัน</button>
         </div>

@@ -18,6 +18,7 @@ class RegisterController extends Controller
         $list= $province->get();
        
         return view('/register')->with('list',$list );
+    
     }
 
     public function fetch(Request $reques ){

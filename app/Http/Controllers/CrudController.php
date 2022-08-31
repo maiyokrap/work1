@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Model\Member;
+use App\Model\Province;
 
 
 
@@ -24,10 +25,21 @@ class CrudController extends Controller
 
            }
 
-    public function edit($id){
+    public function edit($id, Province $province){
         $id = Member::find($id);
+        
+
          return view('formEdit',compact('id'));
           }
+
+    //  public function edit1(Province $province)
+    //       {
+             
+    //           $list= $province->get();
+             
+    //           return view('formEdit')->with('list',$list );
+          
+    //       }
     
     
     public function destroy($id){
