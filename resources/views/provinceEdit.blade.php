@@ -47,7 +47,9 @@ h1 {
     </style>
     </head>
 <body>
+    <a href="/province/show">ย้อนกลับ</a>
 <h1>แก้ไขข้อมูลจังหวัด</h1>
+
     <form action="{{route('province.update')}}" method = "post">
     {{ csrf_field() }}
     <input value="{{$id->id_province}}" type="hidden" name="id_province" >

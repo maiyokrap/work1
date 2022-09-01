@@ -61,7 +61,9 @@ th {
 
 
 <body>
+<a href="/register/show">ย้อนกลับ</a>
 <h1>เพิ่มจังหวัด</h1>
+
     <form action="{{route('province.create')}}" method = "post">
     {{ csrf_field() }}
     <div class="input-group">

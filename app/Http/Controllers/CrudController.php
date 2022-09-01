@@ -15,7 +15,7 @@ class CrudController extends Controller
 
     public function update(Request $req,Member $member){
 
-        $inputs = $req->only('First_name','Last_name','Tel','Email','Addess');
+        $inputs = $req->only('First_name','Last_name','Tel','Email','Addess','id_province','');
         $id = $req->Id;
 
         $data = $member->find($id);
