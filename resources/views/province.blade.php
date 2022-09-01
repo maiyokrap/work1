@@ -98,11 +98,11 @@ th {
     <td>{{$value->name_en}}</td>
     <td>{{$value->code}}</td>
     <td>
-        <a href="{route('province.edit', $value->id_province)}}">แก้ไข</a>
+        <a href="{{route('province.edit',$value->id_province)}}">แก้ไข</a>
     </td>
  
     <td>
-        <a href="{{route('province.destroy', $value->id_province)}}">ลบ</a>
+        <a href="{{route('province.destroy',$value->id_province)}}">ลบ</a>
     </td>
     </tr>
     @endforeach  

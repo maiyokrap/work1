@@ -34,6 +34,20 @@ class ProvinceController extends Controller{
 
          return view('provinceEdit',compact('id'));
           }
+        
+    public function update(Request $req,Province $province){
+       
+
+
+            $inputs = $req->only('name_th','name_th','code');
+            $id = $req->id_province;
+    
+            $data = $province->find($id);
+            $data->update($inputs);
+    
+            return redirect('/province/show');
+    
+               }
 
 
 

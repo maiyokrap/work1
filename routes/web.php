@@ -39,7 +39,7 @@ Route::post('/province/create','ProvinceController@createprovince')->name('provi
 Route::get('/province/show','ProvinceController@showprovince')->name('province.show');
 Route::get('/edit/province/{id}','ProvinceController@edit')->name('province.edit');
 Route::get('/delete/province/{id}','ProvinceController@destroy')->name('province.destroy');
-
+Route::post('/update/province','ProvinceController@update')->name('province.update');
   
 Auth::routes('/register/show');
 
