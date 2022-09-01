@@ -18,6 +18,7 @@
     padding: 20px;
     border: 1px solid #b0c4de;
     background: #99ff99;
+    text-align: center;
     border-radius: 0px 0px 10px 10px;
 }
     input-group {
@@ -26,7 +27,7 @@
 
 .input-group label {
     display: block;
-    text-align: left;
+    text-align: center;
     margin: 3px;
 }
 
@@ -40,15 +41,16 @@
     {{ csrf_field() }}
     <div class="input-group">
             <label for="Firstname">ชื่อ</label>
-            <input type="text" name="First_name">
+            <input type="text" name="First_name" required>
         </div>
         <div class="input-group">
             <label for="password">รหัสผ่าน</label>
-            <input type="password" name="password">
+            <input type="password" name="password" required>
         </div>
         <div class="form-group"> <br>
          <div class="col-md-6 col-md-offset-4">
                  <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
-         </div>
+         </div><br>
+         <a href="/">ต้องการสมัครสมาชิก</a>
 </body>
 </html>

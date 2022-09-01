@@ -25,6 +25,7 @@ h2 {
 }
 form {
     width: 30%;
+    text-align: center;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #b0c4de;
@@ -37,7 +38,7 @@ input-group {
 
 .input-group label {
     display: block;
-    text-align: left;
+    text-align: center;
     margin: 3px;
 }
 .a{
@@ -49,8 +50,8 @@ input-group {
 
 </style>
 <body>
-<a href="/">สมัคร</a> <br>
-<a href="/login1">เข้าสู่ระบบ</a> <br>
+
+<a href="/login1">ออกจากระบบ</a> <br>
 <a href="/province">เพิ่มจังหวัด</a>
 
 <h2>แสดงรายชื่อพนักงาน</h2>

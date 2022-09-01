@@ -40,6 +40,10 @@ h1 {
     text-align: center;
     margin: 3px;
 }
+.form-control{
+    width: 30%;
+
+}
     </style>
     
 </head>
@@ -73,20 +77,23 @@ h1 {
         </div>
        
         <div class="input-group">
-            <label for="Addess">ที่อยู่</label>
-            <input value="{{$id->Addess}}"type="text" name="Addess" required>
-
-        </div>
+                        <label for="id_province">จังหวัด</label>
+                        <select name="id_province" class="form-control amphures">
+                            <option value="">เลือกจังหวัด</option>
+                            </select>
+         </div>
         <div class="input-group">
-            <label for="Addess">ที่อยู่</label>
-            <input value="{{$id->Addess}}"type="text" name="Addess" required>
+                        <label for="id_amphures">อำเภอ</label>
+                        <select name="id_amphures" class="form-control amphures">
+                            <option value="">เลือกอำเภอ</option>
+                            </select>
+         </div>
+                    <div class="input-group">
+                        <label for="Zipcode">รหัสไปรษณีย์</label>
+                    <input value="{{$id->Zipcode}}"type="text" name="Zipcode" >
 
         </div>
-        <div class="input-group">
-            <label for="Addess">ที่อยู่</label>
-            <input value="{{$id->Addess}}"type="text" name="Addess" required>
-
-        </div>
+                    </div>
         <div class="input-group">
             <button type="submit" name="edit" class="btn">ยืนยัน</button>
         </div>

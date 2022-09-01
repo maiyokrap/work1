@@ -21,26 +21,28 @@ class RegisterController extends Controller
     
     }
 
-    public function fetch(Request $reques ){
-        $id=$request->get('select'); 
-        $result=array();
-        $query=Province::table('provinces')
+    public function fetch(Request $request ){
+        if(isset($_POST) && !empty($_POST) && $_POST['function'] == "province"){
+            echo $_POST['name_th'];
+        }
+        // $id=$request->get('select'); 
+        // $result=array();
+        // $query=Province::table('provinces')
         
       
-        ->join('amphures','provinces.id_province','=','amphures.province_id' )
-        ->select('amphures.name_th')
-        ->where('provinces.id_province',$id)
-        ->groupBy('amphures.name_th')
-        ->get();
-        dd($result);
+        // ->join('amphures','provinces.id_province','=','amphures.province_id' )
+        // ->select('amphures.name_th')
+        // ->where('provinces.id_province',$id)
+        // ->groupBy('amphures.name_th')
+        // ->get();
 
-        $output ='<option value="">เลือกอำเภอของท่าน</option>';
-        foreach($variable as $row => $value){
-            $output.='<option value="'.$row->name_th.'">'.$row->name_th.'</option>';
+        // $output ='<option value="">เลือกอำเภอของท่าน</option>';
+        // foreach($variable as $row => $value){
+        //     $output.='<option value="'.$row->name_th.'">'.$row->name_th.'</option>';
 
-        }
-        echo $output;
-       
+        // }
+        // echo $output;
+        
        
 
 

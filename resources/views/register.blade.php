@@ -75,9 +75,9 @@ h1 {
         <div class="input-group">
                         <label for="id_province">จังหวัด</label>
                         <select name="id_province" class="form-control province">
-                            <option value="">จังหวัด</option>
+                            <option value="">เลือกจังหวัด</option>
                             @foreach($list as $row)
-                                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
+                                <option value="{{$row->name_th}}">{{$row->name_th}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -85,7 +85,7 @@ h1 {
         <div class="input-group">
                         <label for="id_amphures">อำเภอ</label>
                         <select name="id_amphures" class="form-control amphures">
-                            <option value="">อำเภอ</option>
+                            <option value="">เลือกอำเภอ</option>
                             </select>
                     </div>
                
@@ -107,22 +107,27 @@ h1 {
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
+    
     $('.province').change(function(){
-        if($(this).val()!='');
-        var select=$(this).val();
-        var _token=$('input[name="_token"]').val();
+        
+        
+        // if($(this).val()!='');
+        var name_th=$(this).val();
+        // console.log(name_th)
+         var _token=$('input[name="_token"]').val();
         $.ajax({
             url:"{{route('province.fetch')}}",
             method:"POST",
-            data:{select:select,_token:_token},
-            success:function(result){
-                $('.amphures').html(result);
+            data:{name_th:name_th,function:'province'},
+            success:function(data){
+                console.log(data)
+                // $('.amphures').html(result);
                
             }
             
         })
         }
-       
+    
     );
 
 </script>
