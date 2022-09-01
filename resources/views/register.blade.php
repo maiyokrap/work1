@@ -114,18 +114,18 @@ h1 {
         // if($(this).val()!='');
         var select=$(this).val();
         console.log(select)
-        //  var _token=$('input[name="_token"]').val();
-        // $.ajax({
-        //     url:"{{route('province.fetch')}}",
-        //     method:"POST",
-        //     data:{select:select,function:'province'},
-        //     success:function(data){
-        //         console.log(data)
-        //         // $('.amphures').html(result);
+         var _token=$('input[name="_token"]').val();
+        $.ajax({
+            url:"{{route('province.fetch')}}",
+            method:"POST",
+            data:{select:select,function:'province'},
+            success:function(data){
+                console.log(data)
+                // $('.amphures').html(result);
                
-        //     }
+            }
             
-        // })
+        })
         }
     
     );
