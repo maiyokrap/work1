@@ -22,10 +22,10 @@ class RegisterController extends Controller
     }
 
     public function fetch(Request $request ){
-        if(isset($_POST) && !empty($_POST) && $_POST['function'] == "province"){
-            echo $_POST['name_th'];
-        }
-        // $id=$request->get('select'); 
+        // if(isset($_POST) && !empty($_POST) && $_POST['function'] == "province"){
+        //     echo $_POST['name_th'];
+        // }
+        // // $id=$request->get('select'); 
         // $result=array();
         // $query=Province::table('provinces')
         

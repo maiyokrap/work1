@@ -52,7 +52,7 @@ input-group {
 <body>
 
 <a href="/login1">ออกจากระบบ</a> <br>
-<a href="/province">เพิ่มจังหวัด</a>
+<a href="{{route('province.show')}}">เพิ่มจังหวัด</a>
 
 <h2>แสดงรายชื่อพนักงาน</h2>
  

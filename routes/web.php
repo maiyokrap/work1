@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/login1', function () {
     return view('login');
 });
+Route::get('/province1', function () {
+    return view('province');
+});
 Route::get('/', 'RegisterController@index')->name('register.index');
 Route::get('/register/show','RegisterController@show')->name('register.show');
 Route::post('/register/save','RegisterController@store')->name('register.store');
@@ -30,10 +33,12 @@ Route::get('/formEdit/edit/{id}','CrudController@edit')->name('register.edit');
 Route::get('/delete/{id}','CrudController@destroy')->name('crud.destroy');
 Route::post('/create','CrudController@store')->name('crud.store');
 Route::post('/update/save','CrudController@update')->name('crud.update');
-Route::post('/province');
 Route::post('/province/fetch','RegisterController@fetch')->name('province.fetch');
 Route::get('/home', 'HomeController@index');
-
+Route::post('/province/create','ProvinceController@createprovince')->name('province.create');
+Route::get('/province/show','ProvinceController@showprovince')->name('province.show');
+Route::get('/edit/province/{id}','ProvinceController@edit')->name('province.edit');
+Route::get('/delete/province/{id}','ProvinceController@destroy')->name('province.destroy');
 
   
 Auth::routes('/register/show');

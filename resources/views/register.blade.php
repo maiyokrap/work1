@@ -74,10 +74,10 @@ h1 {
         </div>
         <div class="input-group">
                         <label for="id_province">จังหวัด</label>
-                        <select name="id_province" class="form-control province">
+                        <select name="id_province" required class="form-control province">
                             <option value="">เลือกจังหวัด</option>
                             @foreach($list as $row)
-                                <option value="{{$row->name_th}}">{{$row->name_th}}</option>
+                                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -112,20 +112,20 @@ h1 {
         
         
         // if($(this).val()!='');
-        var name_th=$(this).val();
-        // console.log(name_th)
-         var _token=$('input[name="_token"]').val();
-        $.ajax({
-            url:"{{route('province.fetch')}}",
-            method:"POST",
-            data:{name_th:name_th,function:'province'},
-            success:function(data){
-                console.log(data)
-                // $('.amphures').html(result);
+        var select=$(this).val();
+        console.log(select)
+        //  var _token=$('input[name="_token"]').val();
+        // $.ajax({
+        //     url:"{{route('province.fetch')}}",
+        //     method:"POST",
+        //     data:{select:select,function:'province'},
+        //     success:function(data){
+        //         console.log(data)
+        //         // $('.amphures').html(result);
                
-            }
+        //     }
             
-        })
+        // })
         }
     
     );
