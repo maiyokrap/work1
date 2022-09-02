@@ -51,7 +51,7 @@ h1 {
 <body>
 <h1>สมัครสมาชิก</h1>
     <form action="{{route('register.store')}}" method = "post">
-    {{ csrf_field() }}
+    {{csrf_field()}}
     <div class="input-group">
             <label for="Firstname">ชื่อ</label>
             <input type="text" name="First_name" required> 
@@ -97,17 +97,41 @@ h1 {
             <label for="Password">รหัสผ่าน</label>
             <input type="password" name="Password" required>
         </div>
+        {{ csrf_field() }}
          <div class="input-group">
             <button type="submit" name="reg_user" class="btn">Register</button>
         </div>
         <a href="/login1">เป็นสมาชิกอยู่แล้ว</a>
     </form>
     {{csrf_field()}}
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('.province').change(function(){
+            
+            var id=$(this).val();
+            var _token=$('input[name="_token"]').val();
+            $.ajax({
+                type: "POST",
+                url:"{{ route('province.feth')}}",
+                data:{id:id,_token:_token},
+                success: function(result){
+                   $('.amphures').html(result);
+                  
+                
+                   
+                }
+            })
+            
+        });
+    </script>
+  
+    
 </body>
 
-    
-    );
 
-</script>
+
+
+
+    
+   
 </html>
