@@ -2,6 +2,7 @@
 
 namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Province;
 
 
 Class Member extends Model
@@ -20,7 +21,11 @@ Class Member extends Model
         'Zip_code',
         'Password'
 
+
     ];
+    public function getProvince() {
+        return $this->belongsTo(Province::class, 'id_province', 'id_province');
+    }
 
     
 }

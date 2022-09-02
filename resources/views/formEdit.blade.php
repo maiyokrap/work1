@@ -79,8 +79,11 @@ h1 {
         
         <div class="input-group">
                         <label for="id_province">จังหวัด</label>
-                        <select name="id_province" required class="form-control amphures">
-                            <option value="{{$id->id_province}}"></option>
+                        <select name="id_province" required class="form-control province">
+                            <option value="{{$id->id_province}}">เลือกจังหวัด</option>
+                            @foreach($list as $row)
+                                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
+                            @endforeach
                             </select>
         <div class="input-group">
                         <label for="id_amphures">อำเภอ</label>
@@ -99,3 +102,24 @@ h1 {
         </div>
         {{ csrf_field() }}
     </form>
+    {{csrf_field()}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('.province').change(function(){
+            
+            var id=$(this).val();
+            var _token=$('input[name="_token"]').val();
+            $.ajax({
+                type: "POST",
+                url:"{{ route('province.amphures')}}",
+                data:{id:id,_token:_token},
+                success: function(result){
+                   $('.amphures').html(result);
+                  
+                
+                   
+                }
+            })
+            
+        });
+    </script>

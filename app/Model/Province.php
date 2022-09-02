@@ -16,6 +16,8 @@ Class Province extends Model
         'name_en',
         'geography_id'
 
+        
+
     ];
 
     

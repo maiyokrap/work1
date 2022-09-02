@@ -103,14 +103,13 @@ input-group {
 
   @foreach($data as $value)
  
- 
   
   <tr>
     <td>{{$value->First_name}}</td>
     <td>{{$value->Last_name}}</td>
     <td>{{$value->Tel}}</td>
     <td>{{$value->Email}}</td>
-    <td>{{$value->Addess}}</td>
+    <td>{{$value->Addess}}&nbsp; จ. {{$value->getProvince->name_th}}</td>
     <td>
     <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary" >แก้ไข</a>
     </td>

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Model\Member;
 use App\Model\Province;
 use App\Model\Amphures;
+use DB;
 
 class ProvinceController extends Controller{
 
@@ -54,8 +55,9 @@ class ProvinceController extends Controller{
 
      public function amphures(Request $req ){
        $id=$req->get('id');
-    //    $result=array();
-       $query=TEST::table('provinces')
+       
+       $result=array();
+       $query=DB::table('provinces')
        ->join('amphures','provinces.id_province','=','amphures.province_id')
        ->select('amphures.name_th')
        ->where('provinces.id_province',$id)
@@ -63,11 +65,11 @@ class ProvinceController extends Controller{
        ->get();
        $data='<option value="">เลือกอำเภอ</option>';
        foreach($query as $row) {
-        $output.='<option value="'.$row->name_th.' ">'.$row->name_th.'</option>';
+        $data.='<option value="'.$row->name_th.' ">'.$row->name_th.'</option>';
     }
     
-    echo $output;
-     }
+    echo $data;
+     
 
        }
 
@@ -102,6 +104,6 @@ class ProvinceController extends Controller{
 
      }
 
-     }
+     
 
 
