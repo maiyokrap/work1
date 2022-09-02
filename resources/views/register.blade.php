@@ -41,7 +41,7 @@ h1 {
     margin: 8px;
 }
 .form-control{
-    width: 30%;
+    width: 50%;
 }
     </style>
     
@@ -105,28 +105,7 @@ h1 {
     {{csrf_field()}}
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript">
-    
-    $('.province').change(function(){
-        
-        
-        // if($(this).val()!='');
-        var select=$(this).val();
-        console.log(select)
-         var _token=$('input[name="_token"]').val();
-        $.ajax({
-            url:"{{route('province.fetch')}}",
-            method:"POST",
-            data:{select:select,function:'province'},
-            success:function(data){
-                console.log(data)
-                // $('.amphures').html(result);
-               
-            }
-            
-        })
-        }
+
     
     );
 

@@ -12,6 +12,14 @@ use Symfony\Component\VarDumper\Cloner\Data;
 
 class CrudController extends Controller
 {
+    public function index(Province $province)
+    {
+       
+        $list= $province->get();
+        
+        return view('/formEdit')->with('list',$list );
+    
+    }
 
     public function update(Request $req,Member $member){
 

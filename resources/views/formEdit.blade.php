@@ -41,7 +41,7 @@ h1 {
     margin: 3px;
 }
 .form-control{
-    width: 30%;
+    width: 50%;
 
 }
     </style>
@@ -75,13 +75,13 @@ h1 {
             <input value="{{$id->Addess}}"type="text" name="Addess" required>
 
         </div>
-       
+        
+        
         <div class="input-group">
                         <label for="id_province">จังหวัด</label>
-                        <select name="id_province" class="form-control amphures">
-                            <option value="">เลือกจังหวัด</option>
+                        <select name="id_province" required class="form-control amphures">
+                            <option value="{{$id->id_province}}"></option>
                             </select>
-         </div>
         <div class="input-group">
                         <label for="id_amphures">อำเภอ</label>
                         <select name="id_amphures" class="form-control amphures">
@@ -97,4 +97,5 @@ h1 {
         <div class="input-group">
             <button type="submit" name="edit" class="btn">ยืนยัน</button>
         </div>
+        {{ csrf_field() }}
     </form>

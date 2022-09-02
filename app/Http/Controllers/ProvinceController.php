@@ -7,6 +7,9 @@ use App\Model\Province;
 use App\Model\Amphures;
 
 class ProvinceController extends Controller{
+
+
+    
     public function createprovince( Request $req, Province $province){
         
         $data = $req->only('name_th','name_en','code');
