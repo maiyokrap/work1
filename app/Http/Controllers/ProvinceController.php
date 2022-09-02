@@ -52,9 +52,9 @@ class ProvinceController extends Controller{
     
                }
 
-     public function feth(Request $req ){
+     public function amphures(Request $req ){
        $id=$req->get('id');
-       $result=array();
+    //    $result=array();
        $query=TEST::table('provinces')
        ->join('amphures','provinces.id_province','=','amphures.province_id')
        ->select('amphures.name_th')
@@ -65,7 +65,7 @@ class ProvinceController extends Controller{
        foreach($query as $row) {
         $output.='<option value="'.$row->name_th.' ">'.$row->name_th.'</option>';
     }
-    dd($output);
+    
     echo $output;
      }
 

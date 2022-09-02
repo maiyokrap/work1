@@ -112,7 +112,7 @@ h1 {
             var _token=$('input[name="_token"]').val();
             $.ajax({
                 type: "POST",
-                url:"{{ route('province.feth')}}",
+                url:"{{ route('province.amphures')}}",
                 data:{id:id,_token:_token},
                 success: function(result){
                    $('.amphures').html(result);

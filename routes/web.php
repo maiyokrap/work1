@@ -40,7 +40,7 @@ Route::get('/province/show','ProvinceController@showprovince')->name('province.s
 Route::get('/edit/province/{id}','ProvinceController@edit')->name('province.edit');
 Route::get('/delete/province/{id}','ProvinceController@destroy')->name('province.destroy');
 Route::post('/update/province','ProvinceController@update')->name('province.update');
-Route::post('/register/feth','ProvinceController@feth')->name('province.feth');
+Route::post('/register/amphures','ProvinceController@amphures')->name('province.amphures');
 Auth::routes('/register/show');
 
 Route::get('/home', 'HomeController@index')->name('home');
