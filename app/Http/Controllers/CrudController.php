@@ -23,7 +23,6 @@ class CrudController extends Controller
 
         $inputs = $req->only('First_name', 'Last_name', 'Tel', 'Email', 'Addess', 'id_province', 'id_amphures');
         $id = $req->Id;
-
         $data = $member->find($id);
         $data->update($inputs);
 

@@ -17,6 +17,5 @@ class Amphures extends Model
         'id_provivce',
 
     ];
-    
 
 }

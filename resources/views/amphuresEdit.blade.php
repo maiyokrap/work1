@@ -57,7 +57,7 @@
 
     <form action="{{route('amphures.update')}}" method="post">
         {{ csrf_field() }}
-        <input value="{{$id->id_province}}" type="hidden" name="id_province">
+        <input value="{{$id->id_amphures}}" type="hidden" name="id_amphures">
         <div class="input-group">
             <label for="name_th">ชื่ออำเภอภาษาไทย</label>
             <input value="{{$id->name_th}}" type="text" name="name_th" required>

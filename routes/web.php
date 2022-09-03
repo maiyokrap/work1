@@ -41,7 +41,7 @@ Route::post('/register/amphures', 'ProvinceController@amphures')->name('province
 Auth::routes('/register/show');
 Route::get('/amphures/show', 'AmphuresController@show')->name('amphures.show');
 Route::get('/amphures/edit{id}', 'AmphuresController@edit')->name('amphures.edit');
-Route::get('/amphures/destroy{id}', 'AmphuresController@show')->name('amphures.destroy');
+Route::get('/amphures/destroy/{id}', 'AmphuresController@destroyAmphures')->name('amphures.destroy');
 Route::post('/amphures/update', 'AmphuresController@updateAmphures')->name('amphures.update');
 Route::post('/amphures/create', 'AmphuresController@create')->name('amphures.create');
 Route::get('/home', 'HomeController@index')->name('home');

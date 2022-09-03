@@ -86,8 +86,10 @@ class AmphuresController extends Controller
      */
     public function updateAmphures(Request $req, Member $member, Amphures $amphures)
     {
-        $inputs = $req->only('name_th', 'name_en', 'zipcode');
-        $id = $req->Id;
+
+        $inputs = $req->only('name_th', 'name_en', 'code');
+
+        $id = $req->id_amphures;
 
         $data = $amphures->find($id);
         $data->update($inputs);
@@ -102,8 +104,9 @@ class AmphuresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyAmphures($id)
     {
+
         Amphures::find($id)->delete();
         return redirect()->route('amphures.show')->with('success', 'Post delete success');
         //
