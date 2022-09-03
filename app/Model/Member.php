@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Model;
-use Illuminate\Database\Eloquent\Model;
+
+use App\Model\Amphures;
 use App\Model\Province;
+use Illuminate\Database\Eloquent\Model;
 
-
-Class Member extends Model
+class Member extends Model
 {
     protected $table = 'member';
     protected $primaryKey = 'Id';
@@ -18,14 +19,18 @@ Class Member extends Model
         'Email',
         'Addess',
         'id_province',
+        'id_amphures',
         'Zip_code',
-        'Password'
-
+        'Password',
 
     ];
-    public function getProvince() {
+    public function getProvince()
+    {
         return $this->belongsTo(Province::class, 'id_province', 'id_province');
     }
+    public function getAmphures()
+    {
+        return $this->belongsTo(Amphures::class, 'id_amphures', 'id_amphures');
+    }
 
-    
 }

@@ -17,9 +17,5 @@ class Province extends Model
         'geography_id',
 
     ];
-    public function getAmphures()
-    {
-        return $this->hasMany(Amphures::class, 'id_amphures', 'id_province');
-    }
 
 }

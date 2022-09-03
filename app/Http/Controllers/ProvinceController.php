@@ -58,7 +58,7 @@ class ProvinceController extends Controller
 
         $result = array();
         $query = DB::table('provinces')
-            ->join('amphures', 'provinces.id_province', '=', 'amphures.province_id')
+            ->join('amphures', 'provinces.id_province', '=', 'amphures.id_province')
             ->select('amphures.name_th')
             ->where('provinces.id_province', $id)
             ->groupBy('amphures.name_th')

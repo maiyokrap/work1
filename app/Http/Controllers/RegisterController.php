@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Amphures;
 use App\Model\Member;
 use App\Model\Province;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class RegisterController extends Controller
 
     }
 
-    public function store(Request $req, Member $member, Province $province)
+    public function store(Request $req, Member $member, Province $province, Amphures $amphures)
     {
 
         $inputs = $req->all();
