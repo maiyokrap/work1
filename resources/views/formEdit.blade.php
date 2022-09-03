@@ -45,7 +45,7 @@
     }
 
     .form-control {
-        width: 50%;
+        width: 30%;
 
     }
     </style>
@@ -91,8 +91,8 @@
             </select>
             <div class="input-group">
                 <label for="id_amphures">อำเภอ</label>
-                <select name="id_amphures" class="form-control amphures">
-                    <option value="">เลือกอำเภอ</option>
+                <select name="id_amphures" required class="form-control amphures">
+                    <option value="{{$id->id_amphures}}">เลือกอำเภอ</option>
                 </select>
             </div>
             <div class="input-group">

@@ -30,7 +30,7 @@ class Member extends Model
     }
     public function getAmphures()
     {
-        return $this->belongsTo(Amphures::class, 'id_amphures', 'id_amphures');
+        return $this->belongsTo(Amphures::class, 'id_amphures', 'name_th');
     }
 
 }

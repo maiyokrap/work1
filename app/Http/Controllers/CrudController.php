@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Amphures;
 use App\Model\Member;
 use App\Model\Province;
 use Illuminate\Http\Request;
@@ -17,10 +18,10 @@ class CrudController extends Controller
 
     }
 
-    public function update(Request $req, Member $member)
+    public function update(Request $req, Member $member, Amphures $amphures)
     {
 
-        $inputs = $req->only('First_name', 'Last_name', 'Tel', 'Email', 'Addess', 'id_province', '');
+        $inputs = $req->only('First_name', 'Last_name', 'Tel', 'Email', 'Addess', 'id_province', 'id_amphures');
         $id = $req->Id;
 
         $data = $member->find($id);

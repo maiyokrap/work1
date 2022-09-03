@@ -46,6 +46,7 @@ input-group {
             <label for="password">รหัสผ่าน</label>
             <input type="password" name="password" required>
         </div>
+
         <div class="form-group"> <br>
             <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
