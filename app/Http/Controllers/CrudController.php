@@ -33,6 +33,7 @@ class CrudController extends Controller
 
     public function edit($id, Province $province)
     {
+
         $id = Member::find($id);
         $list = $province->get();
 

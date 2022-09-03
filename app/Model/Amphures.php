@@ -11,15 +11,12 @@ class Amphures extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'code',
+        'zipcode',
         'name_th',
         'name_en',
-        'province_id',
+        'id_provivce',
 
     ];
-    public function getAmphures()
-    {
-        return $this->hasMany(Amphures::class, 'id_province', 'id_amphures');
-    }
+    
 
 }

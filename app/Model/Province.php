@@ -11,10 +11,9 @@ class Province extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'code',
+
         'name_th',
         'name_en',
-        'geography_id',
 
     ];
 

@@ -20,7 +20,7 @@ class Member extends Model
         'Addess',
         'id_province',
         'id_amphures',
-        'Zip_code',
+
         'Password',
 
     ];

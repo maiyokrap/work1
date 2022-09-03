@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เพิ่มจังหวัด</title>
+    <title>จัดการอำเภอ</title>
     <Style>
     form {
         width: 30%;
@@ -68,31 +68,47 @@
 
 
 <body>
-    <a href="{{route('amphures.show')}}">จัดการอำเภอ</a> <br>
     <a href="/register/show">ย้อนกลับ</a>
-    <h1>เพิ่มจังหวัด</h1>
+    <h1>เพิ่มอำเภอ</h1>
 
-    <form action="{{route('province.create')}}" method="post">
+    <form action="{{route('amphures.create')}}" method="post">
         {{ csrf_field() }}
         <div class="input-group">
-            <label for="name_th">ชื่อจังหวัดภาษาไทย</label>
+            <label for="id_province">จังหวัด</label>
+            <select name="id_province" class="form-control province">
+
+                <option value=""></option>
+
+
+
+            </select>
+        </div>
+
+
+        <div class="input-group">
+            <label for="name_th">ชื่ออำเภอภาษาไทย</label>
             <input type="text" name="name_th" required>
         </div>
         <div class="input-group">
-            <label for="name_en">ชื่อจังหวัดภาษาอังกฤษ</label>
+            <label for="name_en">ชื่ออำเภอภาษาอังกฤษ</label>
             <input type="text" name="name_en" required>
+        </div>
+        <div class="input-group">
+            <label for="zipcode">รหัสไปรษณีย์</label>
+            <input type="text" name="zipcode" required>
         </div>
 
 
 
-        <button type="submit" name="add_province" class="btn">ยืนยัน</button>
+        <button type="submit" name="add_amphures" class="btn">ยืนยัน</button>
         </div>
     </form>
 
     <table style="width:100%"><br>
         <tr>
-            <th>ชื่อจังหวัดภาษาไทย</th>
-            <th>ชื่อจังหวัดภาษาอังกฤษ</th>
+            <th>ชื่ออำเภอภาษาไทย</th>
+            <th>ชื่ออำเภอภาษาอังกฤษ</th>
+            <th>รหัสไปรษณีย์</th>
             <th>แก้ไข</th>
             <th>ลบ</th>
         </tr>
@@ -101,13 +117,13 @@
         <tr>
             <td>{{$value->name_th}}</td>
             <td>{{$value->name_en}}</td>
-
+            <td>{{$value->zipcode}}</td>
             <td>
-                <a href="{{route('province.edit',$value->id_province)}}">แก้ไข</a>
+                <a href="{{route('amphures.edit',$value->id_province)}}">แก้ไข</a>
             </td>
 
             <td>
-                <a href="{{route('province.destroy',$value->id_province)}}">ลบ</a>
+                <a href="{{route('amphures.destroy',$value->id_province)}}">ลบ</a>
             </td>
         </tr>
         @endforeach

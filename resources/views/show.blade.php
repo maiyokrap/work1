@@ -56,8 +56,9 @@ input-group {
 
 <body>
 
+
     <a href="/login1">ออกจากระบบ</a> <br>
-    <a href="{{route('province.show')}}">เพิ่มจังหวัด</a>
+    <a href="{{route('province.show')}}">จัดการจังหวัด</a>
 
     <h2>แสดงรายชื่อพนักงาน</h2>
 
@@ -123,23 +124,14 @@ input-group {
                         <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
                     </td>
                     <td>
-                        <a href="{{route('crud.destroy',$value->Id)}}" class="btn btn-primary">ลบ</a>
+                        <a href="{{route('crud.destroy',$value->Id)}}" name="btn btn-primary" class="delete">ลบ</a>
                     </td>
                     </td>
-
-
-
-
-
-
 
 
                 </tr>
                 @endforeach
             </table>
-
-
-
 
 
 </body>

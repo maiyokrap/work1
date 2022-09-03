@@ -72,33 +72,4 @@ class ProvinceController extends Controller
 
     }
 
-    // $id = $req->$_GET('id_province');
-    // $query = Province::join('amphures','provinces.id_province','=','amphures.provinces_id')
-    // ->select('amphures.name_th','amphures.id_amphures')
-    // ->where('provinces.id_province',$id)
-    // ->get();
-    // $output='<option value="">เลือกอำเภอ</option>';
-    // foreach ($query as $row){
-    //     $output.='<option value="'.$row->id.'"></option>';
-    // }
-    // return $output;
-
-    // echo $_GET['function'];
-    // exit();
-    // $select = $req->get('select');
-    // $value = $req->get('value');
-    // $amphures = $req->get('amphures');
-    // $data =Province::table('id_amphures')
-    //     ->where($select, $value, $amphures)
-    //     ->group($amphures)
-    //     ->get();
-    //     $output = '<option value="">select'.ucfirst($amphures).'</option>';
-    //     foreach($data as $row)
-    //     {
-    //         $output = '<option value="'.$row->$amphures.'">
-    //         '.$row->$amphures.' </option>';
-
-    //     }
-    //     return $output;
-
 }

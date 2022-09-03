@@ -84,15 +84,15 @@
         <div class="input-group">
             <label for="id_province">จังหวัด</label>
             <select name="id_province" required class="form-control province">
-                <option value="{{$id->id_province}}">เลือกจังหวัด</option>
+
                 @foreach($list as $row)
-                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
+                <option value="{{$row->id_province}}">{{$id->name_th}}</option>
                 @endforeach
             </select>
             <div class="input-group">
                 <label for="id_amphures">อำเภอ</label>
                 <select name="id_amphures" required class="form-control amphures">
-                    <option value="{{$id->id_amphures}}">เลือกอำเภอ</option>
+                    <option value="{{$id->id_amphures}}">{{$id->id_amphures}}</option>
                 </select>
             </div>
             <div class="input-group">
