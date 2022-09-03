@@ -2,7 +2,7 @@
 
 namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Model\Amphures;
 
 Class Province extends Model
 {
@@ -16,9 +16,11 @@ Class Province extends Model
         'name_en',
         'geography_id'
 
-        
-
     ];
+    // public function getAmphures() {
+    //     return $this->belongsTo(Amphures::class, 'id_province', 'id_province');
+    // }
+
 
     
 }

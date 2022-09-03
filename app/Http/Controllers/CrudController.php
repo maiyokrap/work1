@@ -1,29 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Model\Member;
 use App\Model\Province;
-
-
-
-
 use Illuminate\Http\Request;
-use Symfony\Component\VarDumper\Cloner\Data;
 
 class CrudController extends Controller
 {
     public function index(Province $province)
     {
-       
-        $list= $province->get();
-        
-        return view('/formEdit')->with('list',$list );
-    
+
+        $list = $province->get();
+
+        return view('/formEdit')->with('list', $list);
+
     }
 
-    public function update(Request $req,Member $member){
+    public function update(Request $req, Member $member)
+    {
 
-        $inputs = $req->only('First_name','Last_name','Tel','Email','Addess','id_province','');
+        $inputs = $req->only('First_name', 'Last_name', 'Tel', 'Email', 'Addess', 'id_province', '');
         $id = $req->Id;
 
         $data = $member->find($id);
@@ -31,31 +28,31 @@ class CrudController extends Controller
 
         return redirect('/register/show');
 
-           }
+    }
 
-    public function edit($id, Province $province){
+    public function edit($id, Province $province)
+    {
         $id = Member::find($id);
-        $list= $province->get();
+        $list = $province->get();
 
-         return view('formEdit',compact('id','list'));
-          }
+        return view('formEdit', compact('id', 'list'));
+    }
 
     //  public function edit1(Province $province)
     //       {
-             
+
     //           $list= $province->get();
-             
+
     //           return view('formEdit')->with('list',$list );
-          
+
     //       }
-    
-    
-    public function destroy($id){
-        
-        
+
+    public function destroy($id)
+    {
+
         Member::find($id)->delete();
-        return redirect()->route('register.show')->with('success','Post delete success');
+        return redirect()->route('register.show')->with('success', 'Post delete success');
 
     }
-    
+
 }

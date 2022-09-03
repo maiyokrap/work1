@@ -2,7 +2,7 @@
 
 namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Model\Province;
 
 Class Amphures extends Model
 {
@@ -17,6 +17,10 @@ Class Amphures extends Model
         'province_id'
 
     ];
+    public function getAmphures() {
+        return $this->belongsTo(Province::class, 'id_province', 'id_province');
+    }
+   
 
     
 }
