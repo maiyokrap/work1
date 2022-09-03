@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Model;
-use Illuminate\Database\Eloquent\Model;
-use App\Model\Province;
 
-Class Amphures extends Model
+use Illuminate\Database\Eloquent\Model;
+
+class Amphures extends Model
 {
     protected $table = 'amphures';
     protected $primaryKey = 'id_amphures';
@@ -14,13 +14,12 @@ Class Amphures extends Model
         'code',
         'name_th',
         'name_en',
-        'province_id'
+        'province_id',
 
     ];
-    public function getAmphures() {
-        return $this->belongsTo(Province::class, 'id_province', 'id_province');
+    public function getAmphures()
+    {
+        return $this->hasMany(Amphures::class, 'id_province', 'id_amphures');
     }
-   
 
-    
 }
