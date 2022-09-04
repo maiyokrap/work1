@@ -68,18 +68,7 @@ input-group {
             <input type="text" name="name" value="{{ request()->input('name') ? request()->input('name') : null }}">
 
         </div>
-        <div class="input-group">
-            <label for="lastname">นามสกุล</label>
-            <input type="text" name="lastname">
-        </div>
-        <div class="input-group">
-            <label for="tel">เบอร์โทร</label>
-            <input type="text" name="tel">
-        </div>
-        <div class="input-group">
-            <label for="email">อีเมล์</label>
-            <input type="email" name="email">
-        </div>
+        
         <div class="input-group"> <br>
             <button type="submit" name="reg_user" class="btn">ค้นหา</button>
         </div>
@@ -124,7 +113,7 @@ input-group {
                         <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
                     </td>
                     <td>
-                        <a href="{{route('crud.destroy',$value->Id)}}" name="btn btn-primary" class="delete">ลบ</a>
+                        <a name="btn btn-primary" onclick="alertConfirm({{ $value->Id }})" class="delete">ลบ</a>
                     </td>
                     </td>
 
@@ -134,6 +123,26 @@ input-group {
             </table>
 
 
+
 </body>
 
 </html>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function alertConfirm(id) {
+            Swal.fire({
+			title: 'ยืนยันการลบข้อมูล?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ตกลง',
+			cancelButtonText: "ยกเลิก"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{URL::to('/delete')}}"+'/'+id
+                }
+            })
+        }
+    </script>

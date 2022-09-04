@@ -95,7 +95,7 @@
 
         <div class="input-group">
             <label for="code">รหัสไปรษณีย์</label>
-            <input type="text" name="code" required>
+            <input type="text" name="zipcode" required id="zipcode">
         </div>
         <div class="input-group">
             <label for="Password">รหัสผ่าน</label>
@@ -130,7 +130,31 @@
         })
 
     });
+    $('.amphures').change(function() {
+
+var id = $(this).val();
+var _token = $('input[name="_token"]').val();
+$.ajax({
+
+    type: "POST",
+    url: "{{ route('province.zipcode')}}",
+    data: {
+        id: id,
+        _token: _token
+    },
+    success: function(result) {
+        // console.log(result);
+// 
+        $('#zipcode').val(result);
+
+
+
+    }
+})
+
+});
     </script>
+    
 
 
 </body>

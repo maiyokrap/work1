@@ -45,3 +45,4 @@ Route::get('/amphures/destroy/{id}', 'AmphuresController@destroyAmphures')->name
 Route::post('/amphures/update', 'AmphuresController@updateAmphures')->name('amphures.update');
 Route::post('/amphures/create', 'AmphuresController@create')->name('amphures.create');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/register/zipcode', 'ProvinceController@zipcode')->name('province.zipcode');

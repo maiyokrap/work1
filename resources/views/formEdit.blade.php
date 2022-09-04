@@ -80,13 +80,13 @@
 
         </div>
 
-
         <div class="input-group">
             <label for="id_province">จังหวัด</label>
             <select name="id_province" required class="form-control province">
 
                 @foreach($list as $row)
-                <option value="{{$row->id_province}}">{{$id->name_th}}</option>
+        
+                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
                 @endforeach
             </select>
             <div class="input-group">

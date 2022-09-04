@@ -35,16 +35,20 @@ class RegisterController extends Controller
 
         if (isset($inputs['name'])) {
             $member = $member->where('First_name', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('Last_name', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('Tel', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('Email', 'LIKE', '%' . trim($inputs['name']) . '%');
+
         }
-        if (isset($inputs['lastname'])) {
-            $member = $member->where('Last_name', 'LIKE', '%' . trim($inputs['lastname']) . '%');
-        }
-        if (isset($inputs['tel'])) {
-            $member = $member->where('Tel', 'LIKE', '%' . trim($inputs['tel']) . '%');
-        }
-        if (isset($inputs['email'])) {
-            $member = $member->where('Email', 'LIKE', '%' . trim($inputs['email']) . '%');
-        }
+        // if (isset($inputs['lastname'])) {
+        //     $member = $member->where('Last_name', 'LIKE', '%' . trim($inputs['lastname']) . '%');
+        // }
+        // if (isset($inputs['tel'])) {
+        //     $member = $member->where('Tel', 'LIKE', '%' . trim($inputs['tel']) . '%');
+        // }
+        // if (isset($inputs['email'])) {
+        //     $member = $member->where('Email', 'LIKE', '%' . trim($inputs['email']) . '%');
+        // }
 
         $this->data['data'] = $member->get();
 
