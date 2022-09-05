@@ -52,11 +52,12 @@ class AmphuresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Amphures $amphures)
+    public function show(Amphures $amphures, Province $province)
     {
         $this->data['data'] = Amphures::orderBy('id_amphures')->get();
+        $list = $province->get();
 
-        return view('amphures', $this->data);
+        return view('amphures', $this->data)->with('list', $list);
 
         //
     }

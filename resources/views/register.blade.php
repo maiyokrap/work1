@@ -132,29 +132,29 @@
     });
     $('.amphures').change(function() {
 
-var id = $(this).val();
-var _token = $('input[name="_token"]').val();
-$.ajax({
+        var id = $(this).val();
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
 
-    type: "POST",
-    url: "{{ route('province.zipcode')}}",
-    data: {
-        id: id,
-        _token: _token
-    },
-    success: function(result) {
-        // console.log(result);
-// 
-        $('#zipcode').val(result);
+            type: "POST",
+            url: "{{ route('province.zipcode')}}",
+            data: {
+                id: id,
+                _token: _token
+            },
+            success: function(result) {
+                // console.log(result);
+                //
+                $('#zipcode').val(result);
 
 
 
-    }
-})
+            }
+        })
 
-});
+    });
     </script>
-    
+
 
 
 </body>

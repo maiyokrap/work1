@@ -76,10 +76,10 @@
         <div class="input-group">
             <label for="id_province">จังหวัด</label>
             <select name="id_province" class="form-control province">
-
-                <option value=""></option>
-
-
+                <option value="">เลือกจังหวัด</option>
+                @foreach($list as $row)
+                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
+                @endforeach
 
             </select>
         </div>
@@ -123,7 +123,8 @@
             </td>
 
             <td>
-                <a href="{{route('amphures.destroy',$value->id_amphures)}}">ลบ</a>
+                <a href="{{route('amphures.destroy',$value->id_amphures)}}" class="btn btn-danger"
+                    onclick="return confirm('ต้องการลบอำเภอ')">ลบ</a>
             </td>
         </tr>
         @endforeach

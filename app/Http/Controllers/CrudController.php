@@ -30,13 +30,14 @@ class CrudController extends Controller
 
     }
 
-    public function edit($id, Province $province)
+    public function edit($id, Province $province, Amphures $amphures)
     {
 
         $id = Member::find($id);
         $list = $province->get();
+        $list1 = $amphures->get();
 
-        return view('formEdit', compact('id', 'list'));
+        return view('formEdit', compact('id', 'list', 'list1'));
     }
 
     //  public function edit1(Province $province)

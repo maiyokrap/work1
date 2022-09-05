@@ -24,7 +24,7 @@ class LoginController extends Controller
             return redirect()->back()->withInput()->with('error', 'ไม่สามารถเข้าสู่ระบบได้ เนื่องจากรหัสผ่านไม่ถูกต้อง');
         }
 
-        return redirect()->route('register.show');
+        return redirect()->route('register.show')->with('success', 'ยินดีต้อนรับ');
 
     }
 

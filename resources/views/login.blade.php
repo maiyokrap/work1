@@ -34,8 +34,22 @@ input-group {
 }
 </style>
 
+
 <body>
     <h1>เข้าสู่ระบบ</h1>
+    @if(count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>@foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    @if(\Session::has('success'))
+    <div class="alert alert-success">
+        <p>{{\session::get('success')}}</p>
+    </div>
+    @endif
     <form action="{{route('login.postLogin')}}" method="post">
         {{ csrf_field() }}
         <div class="input-group">
@@ -54,5 +68,6 @@ input-group {
             <a href="/">ต้องการสมัครสมาชิก</a>
 
 </body>
+
 
 </html>

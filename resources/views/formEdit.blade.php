@@ -53,6 +53,7 @@
 </head>
 
 
+
 <body>
     <h1>แก้ไขข้อมูล</h1>
     <form action="{{route('crud.update')}}" method="post">
@@ -85,19 +86,24 @@
             <select name="id_province" required class="form-control province">
 
                 @foreach($list as $row)
-        
-                <option value="{{$row->id_province}}">{{$row->name_th}}</option>
+
+                <option value="{{$row->id_province}}" {{($row->id_province==$id->id_province)?'selected':''}}>
+                    {{$row->name_th}}
+                </option>
                 @endforeach
             </select>
             <div class="input-group">
                 <label for="id_amphures">อำเภอ</label>
                 <select name="id_amphures" required class="form-control amphures">
-                    <option value="{{$id->id_amphures}}">{{$id->id_amphures}}</option>
+                    @foreach($list1 as $row)
+                    <option value="{{$row->id_amphures}}" {{($row->id_amphures==$id->id_amphures)?'selected':''}}>
+                        {{$row->name_th}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="input-group">
                 <label for="Zipcode">รหัสไปรษณีย์</label>
-                <input value="{{$id->Zipcode}}" type="text" name="Zipcode">
+                <input value="{{$id->zipcode}}" type="text" name="zipcode" id="zipcode">
 
             </div>
         </div>
@@ -109,6 +115,9 @@
     {{csrf_field()}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
+    $(document).ready(function() {
+        $('.province').change()
+    });
     $('.province').change(function() {
 
         var id = $(this).val();
@@ -122,6 +131,28 @@
             },
             success: function(result) {
                 $('.amphures').html(result);
+
+
+
+            }
+        })
+    });
+    $('.amphures').change(function() {
+
+        var id = $(this).val();
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+
+            type: "POST",
+            url: "{{ route('province.zipcode')}}",
+            data: {
+                id: id,
+                _token: _token
+            },
+            success: function(result) {
+                // console.log(result);
+                //
+                $('#zipcode').val(result);
 
 
 

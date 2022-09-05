@@ -107,7 +107,8 @@
             </td>
 
             <td>
-                <a href="{{route('province.destroy',$value->id_province)}}">ลบ</a>
+                <a href="{{route('province.destroy',$value->id_province)}} " class="btn btn-danger"
+                    onclick="return confirm('ต้องการลบจังหวัด')">ลบ</a>
             </td>
         </tr>
         @endforeach

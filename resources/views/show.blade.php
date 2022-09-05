@@ -57,7 +57,7 @@ input-group {
 <body>
 
 
-    <a href="/login1">ออกจากระบบ</a> <br>
+    <a href="/login1" class="btn btn-danger" onclick="return confirm('ต้องการออกจากระบบ')">ออกจากระบบ</a> <br>
     <a href="{{route('province.show')}}">จัดการจังหวัด</a>
 
     <h2>แสดงรายชื่อพนักงาน</h2>
@@ -68,7 +68,7 @@ input-group {
             <input type="text" name="name" value="{{ request()->input('name') ? request()->input('name') : null }}">
 
         </div>
-        
+
         <div class="input-group"> <br>
             <button type="submit" name="reg_user" class="btn">ค้นหา</button>
         </div>
@@ -107,7 +107,7 @@ input-group {
                     <td>{{$value->Tel}}</td>
                     <td>{{$value->Email}}</td>
                     <td>{{$value->Addess}}&nbsp; อ. {{$value->getAmphures->name_th}} &nbsp;
-                        จ.{{$value->getProvince->name_th}}
+                        จ.{{$value->getProvince->name_th}}&nbsp; อ. {{$value->zipcode}}
                     </td>
                     <td>
                         <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
@@ -129,20 +129,20 @@ input-group {
 </html>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script>
-        function alertConfirm(id) {
-            Swal.fire({
-			title: 'ยืนยันการลบข้อมูล?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'ตกลง',
-			cancelButtonText: "ยกเลิก"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "{{URL::to('/delete')}}"+'/'+id
-                }
-            })
+<script>
+function alertConfirm(id) {
+    Swal.fire({
+        title: 'ยืนยันการลบข้อมูล?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'ตกลง',
+        cancelButtonText: "ยกเลิก"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "{{URL::to('/delete')}}" + '/' + id
         }
-    </script>
+    })
+}
+</script>
