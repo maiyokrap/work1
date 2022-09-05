@@ -118,7 +118,7 @@ input-group {
                         <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
                     </td>
                     <td>
-                        <a name="btn btn-primary" onclick="alertConfirm({{ $value->Id }})"
+                        <a name="btn btn-primary" style="background: yellow;" onclick="alertConfirm({{ $value->Id }})"
                             class="btn btn-danger delete">ลบ</a>
                     </td>
                     </td>
