@@ -52,6 +52,11 @@ input-group {
     text-align: center;
 
 }
+
+.btn btn-danger {
+    text-align: center;
+    background: #99ff99;
+}
 </style>
 
 <body>
@@ -64,7 +69,7 @@ input-group {
 
     <form action="" method="get">
         <div class="input-group">
-            <label for="name">ชื่อ</label>
+            <label for="name">ค้นหาสมาชิกด้วย ชื่อ, นามสกุล, เบอโทรศัพท์และ Emaill</label>
             <input type="text" name="name" value="{{ request()->input('name') ? request()->input('name') : null }}">
 
         </div>
@@ -107,13 +112,14 @@ input-group {
                     <td>{{$value->Tel}}</td>
                     <td>{{$value->Email}}</td>
                     <td>{{$value->Addess}}&nbsp; อ. {{$value->getAmphures->name_th}} &nbsp;
-                        จ.{{$value->getProvince->name_th}}&nbsp; อ. {{$value->zipcode}}
+                        จ.{{$value->getProvince->name_th}}&nbsp; {{$value->zipcode}}
                     </td>
                     <td>
                         <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
                     </td>
                     <td>
-                        <a name="btn btn-primary" onclick="alertConfirm({{ $value->Id }})" class="delete">ลบ</a>
+                        <a name="btn btn-primary" onclick="alertConfirm({{ $value->Id }})"
+                            class="btn btn-danger delete">ลบ</a>
                     </td>
                     </td>
 

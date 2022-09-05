@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,17 +38,9 @@ input-group {
 
 <body>
     <h1>เข้าสู่ระบบ</h1>
-    @if(count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>@foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-    @if(\Session::has('success'))
+    @if (session('success'))
     <div class="alert alert-success">
-        <p>{{\session::get('success')}}</p>
+        {{ session('success') }}
     </div>
     @endif
     <form action="{{route('login.postLogin')}}" method="post">
