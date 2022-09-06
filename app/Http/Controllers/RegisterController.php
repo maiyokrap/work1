@@ -29,7 +29,7 @@ class RegisterController extends Controller
         return redirect('/register/show');
 
     }
-    public function show(Member $member)
+    public function show(Member $member, Province $province)
     {
         $inputs = request()->input();
 
@@ -38,7 +38,8 @@ class RegisterController extends Controller
             $member = $member->orWhere('Last_name', 'LIKE', '%' . trim($inputs['name']) . '%');
             $member = $member->orWhere('Tel', 'LIKE', '%' . trim($inputs['name']) . '%');
             $member = $member->orWhere('Email', 'LIKE', '%' . trim($inputs['name']) . '%');
-
+            $province = $province->orWhere('name_th', 'LIKE', '%' . trim($inputs['name']) . '%');
+            dd($province);
         }
         // if (isset($inputs['lastname'])) {
         //     $member = $member->where('Last_name', 'LIKE', '%' . trim($inputs['lastname']) . '%');
