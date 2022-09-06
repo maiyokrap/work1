@@ -85,7 +85,7 @@
 
 
 
-        <button type="submit" name="add_province" class="btn">ยืนยัน</button>
+        <button type="submit" name="add_province" class="btn" onclick="myFunction()">ยืนยัน</button>
         </div>
     </form>
 
@@ -113,3 +113,8 @@
         </tr>
         @endforeach
     </table>
+    <script>
+    function myFunction() {
+        alert("เพิ่มจังหวัดสำเร็จ");
+    }
+    </script>

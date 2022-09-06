@@ -85,48 +85,45 @@ input-group {
         <!-- /.row -->
 
         <!-- will be used to show any messages -->
-        @if (Session::has('message'))
-        <div class="alert alert-success">{{ Session::get('message') }}</div>
-        @endif
-        <div class="table-responsive">
 
-            <table style="width:100%"><br>
-                <tr>
-                    <th>ชื่อ</th>
-                    <th>นามสกุล</th>
-                    <th>เบอร์โทร</th>
-                    <th>อีเมล์</th>
-                    <th>ที่อยู่</th>
-                    <th>แก้ไข</th>
-                    <th>ลบ</th>
 
-                </tr>
+        <table style="width:100%"><br>
+            <tr>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>เบอร์โทร</th>
+                <th>อีเมล์</th>
+                <th>ที่อยู่</th>
+                <th>แก้ไข</th>
+                <th>ลบ</th>
 
-                @foreach($data as $value)
+            </tr>
+
+            @foreach($data as $value)
 
 
 
-                <tr>
-                    <td>{{$value->First_name}}</td>
-                    <td>{{$value->Last_name}}</td>
-                    <td>{{$value->Tel}}</td>
-                    <td>{{$value->Email}}</td>
-                    <td>{{$value->Addess}}&nbsp; อ. {{$value->getAmphures->name_th}} &nbsp;
-                        จ.{{$value->getProvince->name_th}}&nbsp; {{$value->zipcode}}
-                    </td>
-                    <td>
-                        <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
-                    </td>
-                    <td>
-                        <a name="btn btn-primary" style="background: yellow;" onclick="alertConfirm({{ $value->Id }})"
-                            class="btn btn-danger delete">ลบ</a>
-                    </td>
-                    </td>
+            <tr>
+                <td>{{$value->First_name}}</td>
+                <td>{{$value->Last_name}}</td>
+                <td>{{$value->Tel}}</td>
+                <td>{{$value->Email}}</td>
+                <td>{{$value->Addess}}&nbsp; อ. {{$value->getAmphures->name_th}} &nbsp;
+                    จ.{{$value->getProvince->name_th}}&nbsp; {{$value->zipcode}}
+                </td>
+                <td>
+                    <a href="{{route('register.edit',$value->Id)}}" class="btn btn-primary">แก้ไข</a>
+                </td>
+                <td>
+                    <a name="btn btn-primary" style="background: yellow;" onclick="alertConfirm({{ $value->Id }})"
+                        class="btn btn-danger delete">ลบ</a>
+                </td>
+                </td>
 
 
-                </tr>
-                @endforeach
-            </table>
+            </tr>
+            @endforeach
+        </table>
 
 
 

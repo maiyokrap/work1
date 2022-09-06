@@ -38,10 +38,20 @@ input-group {
 
 <body>
 
+
     <h1>เข้าสู่ระบบ</h1>
-    @if (session('success'))
+    @if (\Session::has('error'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{!! \Session::get('error') !!}</li>
+        </ul>
+    </div>
+    @endif
+    @if (\Session::has('success'))
     <div class="alert alert-success">
-        {{ session('success') }}
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
     </div>
     @endif
     <form action="{{route('login.postLogin')}}" method="post">

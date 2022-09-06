@@ -55,6 +55,7 @@
 
 
 <body>
+
     <h1>แก้ไขข้อมูล</h1>
     <form action="{{route('crud.update')}}" method="post">
         {{ csrf_field() }}
@@ -108,12 +109,14 @@
             </div>
         </div>
         <div class="input-group">
-            <button type="submit" name="edit" class="btn">ยืนยัน</button>
+            <button type="submit" name="edit" class="btn submit" onclick="myFunction()">ยืนยัน</button>
         </div>
         {{ csrf_field() }}
     </form>
     {{csrf_field()}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.29/sweetalert2.min.css"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('.province').change()
@@ -154,10 +157,12 @@
                 //
                 $('#zipcode').val(result);
 
-
-
             }
         })
 
     });
+
+    function myFunction() {
+        alert("[บันทึกสำเร็จ]");
+    }
     </script>

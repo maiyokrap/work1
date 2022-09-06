@@ -100,7 +100,7 @@
 
 
 
-        <button type="submit" name="add_amphures" class="btn">ยืนยัน</button>
+        <button type="submit" name="add_amphures" class="btn" onclick="myFunction()">ยืนยัน</button>
         </div>
     </form>
 
@@ -129,3 +129,8 @@
         </tr>
         @endforeach
     </table>
+    <script>
+    function myFunction() {
+        alert("เพิ่มอำเภอสำเร็จ");
+    }
+    </script>

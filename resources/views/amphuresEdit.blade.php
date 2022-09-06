@@ -71,9 +71,14 @@
             <input value="{{$id->zipcode}}" type="text" name="code" required>
         </div> <br>
         <div class="input-group">
-            <button type="submit" name="edit" class="btn">ยืนยัน</button>
+            <button type="submit" name="edit" class="btn" onclick="myFunction()">ยืนยัน</button>
         </div>
 
 </body>
+<script>
+function myFunction() {
+    alert("บันทึกสำเร็จ");
+}
+</script>
 
 </html>
