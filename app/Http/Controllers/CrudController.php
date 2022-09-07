@@ -34,8 +34,10 @@ class CrudController extends Controller
     {
 
         $id = Member::find($id);
+        // $query = Province::join('amphures','province.id_province','=','amphures.id_province');
+
         $list = $province->get();
-        $list1 = $amphures->get();
+        $list1 = Amphures::where("id_province", "=", $id->id_province)->get();
 
         return view('formEdit', compact('id', 'list', 'list1'));
     }

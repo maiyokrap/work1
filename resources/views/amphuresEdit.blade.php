@@ -57,22 +57,34 @@
 
     <form action="{{route('amphures.update')}}" method="post">
         {{ csrf_field() }}
-        <input value="{{$id->id_amphures}}" type="hidden" name="id_amphures">
         <div class="input-group">
-            <label for="name_th">ชื่ออำเภอภาษาไทย</label>
-            <input value="{{$id->name_th}}" type="text" name="name_th" required>
-        </div>
-        <div class="input-group">
-            <label for="name_en">ชื่ออำเภอภาษาอังกฤษ</label>
-            <input value="{{$id->name_en}}" type="text" name="name_en" required>
-        </div>
-        <div class="input-group">
-            <label for="code">รหัสไปรษณีย์</label>
-            <input value="{{$id->zipcode}}" type="text" name="code" required>
-        </div> <br>
-        <div class="input-group">
-            <button type="submit" name="edit" class="btn" onclick="myFunction()">ยืนยัน</button>
-        </div>
+            <label for="id_province">จังหวัด</label>
+            <select name="id_province" required class="form-control province">
+
+                @foreach($list as $row)
+
+                <option value="{{$row->id_province}}" {{($row->id_province==$id->id_province)?'selected':''}}>
+                    {{$row->name_th}}
+                </option>
+                @endforeach
+            </select>
+
+            <input value="{{$id->id_amphures}}" type="hidden" name="id_amphures">
+            <div class="input-group">
+                <label for="name_th">ชื่ออำเภอภาษาไทย</label>
+                <input value="{{$id->name_th}}" type="text" name="name_th" required>
+            </div>
+            <div class="input-group">
+                <label for="name_en">ชื่ออำเภอภาษาอังกฤษ</label>
+                <input value="{{$id->name_en}}" type="text" name="name_en" required>
+            </div>
+            <div class="input-group">
+                <label for="code">รหัสไปรษณีย์</label>
+                <input value="{{$id->zipcode}}" type="text" name="code" required>
+            </div> <br>
+            <div class="input-group">
+                <button type="submit" name="edit" class="btn" onclick="myFunction()">ยืนยัน</button>
+            </div>
 
 </body>
 <script>

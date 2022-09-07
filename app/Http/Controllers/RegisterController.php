@@ -31,25 +31,30 @@ class RegisterController extends Controller
     }
     public function show(Member $member, Province $province)
     {
+        $member = $member->leftJoin('provinces', 'provinces.id_province', '=', 'member.id_province')
+            ->select(
+                'member.*',
+                'provinces.name_th as province_name'
+            );
+        $member = $member->leftJoin('amphures', 'amphures.id_amphures', '=', 'member.id_amphures')
+            ->select(
+                'member.*',
+                'amphures.name_th'
+            );
+        dd($member);
+
         $inputs = request()->input();
 
         if (isset($inputs['name'])) {
-            $member = $member->where('First_name', 'LIKE', '%' . trim($inputs['name']) . '%');
-            $member = $member->orWhere('Last_name', 'LIKE', '%' . trim($inputs['name']) . '%');
-            $member = $member->orWhere('Tel', 'LIKE', '%' . trim($inputs['name']) . '%');
-            $member = $member->orWhere('Email', 'LIKE', '%' . trim($inputs['name']) . '%');
-            $province = $province->orWhere('name_th', 'LIKE', '%' . trim($inputs['name']) . '%');
-            dd($province);
+
+            $member = $member->where('member.First_name', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('member.Last_name', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('member.Tel', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('member.Email', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('provinces.name_th', 'LIKE', '%' . trim($inputs['name']) . '%');
+            $member = $member->orWhere('amphures.name_th', 'LIKE', '%' . trim($inputs['name']) . '%');
+
         }
-        // if (isset($inputs['lastname'])) {
-        //     $member = $member->where('Last_name', 'LIKE', '%' . trim($inputs['lastname']) . '%');
-        // }
-        // if (isset($inputs['tel'])) {
-        //     $member = $member->where('Tel', 'LIKE', '%' . trim($inputs['tel']) . '%');
-        // }
-        // if (isset($inputs['email'])) {
-        //     $member = $member->where('Email', 'LIKE', '%' . trim($inputs['email']) . '%');
-        // }
 
         $this->data['data'] = $member->get();
 

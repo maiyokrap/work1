@@ -92,6 +92,7 @@
                     {{$row->name_th}}
                 </option>
                 @endforeach
+
             </select>
             <div class="input-group">
                 <label for="id_amphures">อำเภอ</label>
@@ -121,25 +122,7 @@
     $(document).ready(function() {
         $('.province').change()
     });
-    $('.province').change(function() {
 
-        var id = $(this).val();
-        var _token = $('input[name="_token"]').val();
-        $.ajax({
-            type: "POST",
-            url: "{{ route('province.amphures')}}",
-            data: {
-                id: id,
-                _token: _token
-            },
-            success: function(result) {
-                $('.amphures').html(result);
-
-
-
-            }
-        })
-    });
     $('.amphures').change(function() {
 
         var id = $(this).val();

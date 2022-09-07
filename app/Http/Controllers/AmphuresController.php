@@ -88,7 +88,7 @@ class AmphuresController extends Controller
     public function updateAmphures(Request $req, Member $member, Amphures $amphures)
     {
 
-        $inputs = $req->only('name_th', 'name_en', 'code');
+        $inputs = $req->only('id_province', 'name_th', 'name_en', 'code');
 
         $id = $req->id_amphures;
 
