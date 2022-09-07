@@ -41,7 +41,6 @@ class RegisterController extends Controller
                 'member.*',
                 'amphures.name_th'
             );
-        dd($member);
 
         $inputs = request()->input();
 

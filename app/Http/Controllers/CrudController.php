@@ -21,7 +21,7 @@ class CrudController extends Controller
     public function update(Request $req, Member $member, Amphures $amphures)
     {
 
-        $inputs = $req->only('First_name', 'Last_name', 'Tel', 'Email', 'Addess', 'id_province', 'id_amphures');
+        $inputs = $req->only('First_name', 'Last_name', 'Tel', 'Email', 'Addess', 'id_province', 'id_amphures', 'zipcode');
         $id = $req->Id;
         $data = $member->find($id);
         $data->update($inputs);
@@ -34,22 +34,12 @@ class CrudController extends Controller
     {
 
         $id = Member::find($id);
-        // $query = Province::join('amphures','province.id_province','=','amphures.id_province');
 
         $list = $province->get();
         $list1 = Amphures::where("id_province", "=", $id->id_province)->get();
 
         return view('formEdit', compact('id', 'list', 'list1'));
     }
-
-    //  public function edit1(Province $province)
-    //       {
-
-    //           $list= $province->get();
-
-    //           return view('formEdit')->with('list',$list );
-
-    //       }
 
     public function destroy($id)
     {
