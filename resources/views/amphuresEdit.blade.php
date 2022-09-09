@@ -80,7 +80,7 @@
             </div>
             <div class="input-group">
                 <label for="code">รหัสไปรษณีย์</label>
-                <input value="{{$id->zipcode}}" type="text" name="code" required>
+                <input value="{{$id->zipcode}}" type="text" name="code" required> 
             </div> <br>
             <div class="input-group">
                 <button type="submit" name="edit" class="btn" onclick="myFunction()">ยืนยัน</button>
