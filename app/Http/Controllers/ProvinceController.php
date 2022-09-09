@@ -59,11 +59,11 @@ class ProvinceController extends Controller
         $result = array();
         $query = DB::table('provinces')
             ->join('amphures', 'provinces.id_province', '=', 'amphures.id_province')
-            ->select('amphures.name_th','amphures.id_amphures')
+            ->select('amphures.name_th', 'amphures.id_amphures')
             ->where('provinces.id_province', $id)
-            // ->groupBy('amphures.name_th')
+
             ->get();
-            // dd($query);
+
         $data = '<option value="">เลือกอำเภอ</option>';
         foreach ($query as $row) {
             $data .= '<option value="' . $row->id_amphures . ' ">' . $row->name_th . '</option>';
@@ -78,17 +78,15 @@ class ProvinceController extends Controller
 
         $result = array();
         $query = DB::table('amphures')
-           
+
             ->select('amphures.zipcode')
             ->where('amphures.id_amphures', $id)
-            // ->groupBy('amphures.name_th')
-            ->first();
-            
-        $data = $query->zipcode;
-        // dd($data);
-    
 
-        return $data ;
+            ->first();
+
+        $data = $query->zipcode;
+
+        return $data;
 
     }
 
