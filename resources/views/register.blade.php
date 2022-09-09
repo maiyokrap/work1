@@ -7,14 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สมัครสมาชิก</title>
     <Style>
-    form {
-        width: 30%;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #b0c4de;
-        background: white;
-        border-radius: 0px 0px 10px 10px;
-    }
+
     </Style>
     <style>
     .input-group {
@@ -25,8 +18,8 @@
     form {
         width: 30%;
         margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #b0c4de;
+        padding: 40px;
+        border: 5px solid #b0c4de;
         background: #99ff99;
         border-radius: 10px 10px 10px 10px;
         text-align: center;
@@ -42,7 +35,10 @@
         display: block;
         text-align: center;
         margin: 8px;
+
     }
+
+
 
     .form-control {
         width: 30%;
