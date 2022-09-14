@@ -62,7 +62,7 @@
             <select name="id_province" required class="form-control province">
 
                 @foreach($list as $row)
-
+                xcvxcvxcvxcv
                 <option value="{{$row->id_province}}" {{($row->id_province==$id->id_province)?'selected':''}}>
                     {{$row->name_th}}
                 </option>
@@ -80,7 +80,7 @@
             </div>
             <div class="input-group">
                 <label for="code">รหัสไปรษณีย์</label>
-                <input value="{{$id->zipcode}}" type="text" name="code" required> 
+                <input value="{{$id->zipcode}}" type="text" name="code" required>
             </div> <br>
             <div class="input-group">
                 <button type="submit" name="edit" class="btn" onclick="myFunction()">ยืนยัน</button>
